@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 88" fill="none" role="img" aria-labelledby="t">
+  <title id="t">Nordblade</title>
+  <defs>
+    <linearGradient id="metal" x1="0" y1="0" x2="200" y2="88" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E8D09A"/>
+      <stop offset="0.35" stop-color="#C5A059"/>
+      <stop offset="0.7" stop-color="#A8843F"/>
+      <stop offset="1" stop-color="#D4B87A"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(4,2) skewX(-9)">
+    <path fill="url(#metal)" d="M2 2h20c3 0 5.5 2.5 5.5 5.5V34c0 2-1 3.8-2.6 4.8L14 46v8H2V2z"/>
+    <path fill="url(#metal)" d="M4 46h12.5L13 78.5c-.4 2.8-3.1 4.7-5.9 4.2C4.2 82.1 2 79 2 75.5V50c0-2.2.9-4 2-4z"/>
+    <path fill="url(#metal)" d="M18 44 46 6h16L22 54z"/>
+    <path fill="url(#metal)" d="M46 6h15v42H46z"/>
+    <path fill="#050505" opacity="0.3" d="M6 48h7L11.5 76c0 1.2-.9 2-1.8 1.8-.9-.1-2.2-1.2-2.2-2.8V50c0-1 .4-2 1.5-2z"/>
+    <circle cx="12.5" cy="14" r="2.6" fill="#050505"/>
+    <circle cx="12.5" cy="26" r="2.6" fill="#050505"/>
+    <text x="70" y="44" fill="url(#metal)" font-family="Arial Black, Arial, sans-serif" font-size="40" font-weight="700" letter-spacing="-2">ord</text>
+    <text x="14" y="82" fill="url(#metal)" font-family="Arial Black, Arial, sans-serif" font-size="38" font-weight="700" letter-spacing="-1">blade</text>
+  </g>
+</svg>

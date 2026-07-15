@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 110" fill="none" role="img" aria-label="Nordblade mark">
+  <defs>
+    <linearGradient id="goldMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8D09A"/>
+      <stop offset="40%" stop-color="#C5A059"/>
+      <stop offset="100%" stop-color="#8B6A2E"/>
+    </linearGradient>
+  </defs>
+  <path
+    fill="url(#goldMetal)"
+    d="M36 6c-1.4 0-2.6.9-3.1 2.2L10.2 68.5c-.5 1.1-.2 2.3.6 3.1l8.8 8.8c.8.8 2.1 1 3.1.5l51.2-22.2c1.3-.6 2.1-1.9 2.1-3.4V16c0-5.5-4.5-10-10-10H36z"
+  />
+  <path fill="#050505" opacity="0.22" d="M38 14h34c2.8 0 5 2.2 5 5v28.5L54 66 38 50V14z"/>
+  <circle cx="44" cy="26" r="3.8" fill="#050505"/>
+  <circle cx="44" cy="40" r="3.8" fill="#050505"/>
+  <path
+    fill="url(#goldMetal)"
+    d="M22.4 76c-1-.1-1.9.3-2.5.9L7.6 89.2c-2.9 2.9-2.7 7.7.5 10.3 10.4 8.6 27.4 17.6 43.5 17.6 5 0 8.7-1.9 10.3-5 1.5-2.7 1-5.8-1-7.9L22.4 76z"
+  />
+</svg>
