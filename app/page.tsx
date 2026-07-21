@@ -217,7 +217,7 @@ export default function HomePage() {
                   className="object-cover transition-transform duration-700 hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg/55 to-transparent" />
                 <span className="absolute bottom-4 left-4 font-display text-sm text-gold">
                   {path.number} {path.title}
                 </span>
@@ -274,7 +274,7 @@ export default function HomePage() {
             className="object-cover opacity-35"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-bg/80" />
+          <div className="absolute inset-0 bg-bg/65" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 py-20 lg:px-6">
           <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
@@ -327,7 +327,7 @@ export default function HomePage() {
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg/85 via-bg/45 to-bg/15" />
             <div className="absolute inset-0 flex flex-col justify-end p-8">
               <p className="text-sm text-gold">
                 Our Story
@@ -361,7 +361,7 @@ export default function HomePage() {
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg/85 via-bg/45 to-bg/15" />
             <div className="absolute inset-0 flex flex-col justify-end p-8">
               <p className="text-sm text-gold">
                 Get In Touch
@@ -387,7 +387,7 @@ export default function HomePage() {
       </section>
 
       {/* Quick links strip */}
-      <section className="border-y border-white/5 bg-surface/60">
+      <section className="border-y border-white/8 bg-surface/50">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 gap-y-4 px-4 py-8 lg:px-6">
           {[
             { href: "/launch-your-brand", label: "Launch" },

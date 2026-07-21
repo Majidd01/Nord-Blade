@@ -5,7 +5,7 @@ import { navLinks, siteConfig } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-white/5 bg-surface">
+    <footer className="mt-auto border-t border-white/8 bg-surface/90">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-[1.2fr_1fr_1fr] lg:px-6">
         <div>
           <Logo />

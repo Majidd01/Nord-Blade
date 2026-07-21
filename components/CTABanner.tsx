@@ -18,13 +18,13 @@ export function CTABanner({
   return (
     <section className="relative overflow-hidden border-y border-gold/20">
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-40"
+        className="absolute inset-0 bg-cover bg-center opacity-55"
         style={{
           backgroundImage:
             "url(/images/hero-mountains-rocks.png)",
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/90 to-bg/70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-bg/75 via-bg/55 to-bg/35" />
       <div className="relative mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-4 py-16 md:flex-row md:items-center lg:px-6">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl text-text sm:text-4xl">

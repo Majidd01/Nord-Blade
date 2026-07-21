@@ -57,9 +57,9 @@ export function FullBleedHero({
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/25" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_50%,rgba(158,74,74,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg/80 via-bg/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg/45 via-transparent to-bg/10" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_50%,rgba(168,90,90,0.06),transparent_50%)]" />
       </div>
 
       <div className="relative z-20 mx-auto grid min-h-[88vh] max-w-7xl items-center gap-8 px-4 py-16 lg:grid-cols-[1fr_1.05fr] lg:px-6 lg:py-20">
@@ -121,7 +121,7 @@ export function FullBleedHero({
         </div>
 
         <div className="relative mx-auto h-[540px] w-full max-w-lg overflow-visible sm:h-[620px] lg:max-w-none lg:h-[760px]">
-          <div className="pointer-events-none absolute bottom-[6%] left-[52%] h-24 w-[75%] -translate-x-1/2 rounded-[100%] bg-black/70 blur-3xl" />
+          <div className="pointer-events-none absolute bottom-[6%] left-[52%] h-24 w-[75%] -translate-x-1/2 rounded-[100%] bg-bg/50 blur-3xl" />
 
           <motion.div
             className="absolute inset-0 flex items-end justify-center lg:justify-end"
