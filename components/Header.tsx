@@ -37,13 +37,13 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative px-2.5 py-2 text-[0.72rem] tracking-wide transition-colors ${
-                  active ? "text-gold" : "text-muted hover:text-text"
+                className={`relative px-2.5 py-2 text-[0.68rem] font-medium tracking-[0.14em] uppercase transition-colors ${
+                  active ? "text-gold" : "text-text/85 hover:text-gold"
                 }`}
               >
                 {link.label}
                 {active ? (
-                  <span className="absolute inset-x-3 -bottom-0.5 h-px bg-crimson-soft/60" />
+                  <span className="absolute inset-x-2.5 -bottom-0.5 h-px bg-gold" />
                 ) : null}
               </Link>
             );

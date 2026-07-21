@@ -50,7 +50,8 @@ export default function HomePage() {
         eyebrow="Premium Knife Manufacturing & Brand Growth Partner"
         title={
           <>
-            We don&apos;t just make knives.{" "}
+            We don&apos;t just make knives.
+            <br />
             <span className="text-gold">We build knife brands.</span>
           </>
         }
@@ -68,7 +69,7 @@ export default function HomePage() {
                   </svg>
                 </span>
                 <div>
-                  <p className="font-display text-sm text-gold">
+                  <p className="text-[0.65rem] font-medium tracking-[0.16em] text-gold uppercase">
                     {benefit.title}
                   </p>
                   <p className="mt-1 text-sm text-muted">{benefit.description}</p>

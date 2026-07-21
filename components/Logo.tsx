@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 
@@ -14,16 +13,11 @@ export function Logo({ showTagline = true, className = "" }: LogoProps) {
       className={`group inline-flex flex-col no-underline ${className}`}
       aria-label={`${siteConfig.name} home`}
     >
-      <Image
-        src="/brand/nordblade-wordmark.png"
-        alt="NORDBLADE"
-        width={280}
-        height={48}
-        priority
-        className="h-8 w-auto bg-transparent transition-opacity duration-300 group-hover:opacity-90 sm:h-9"
-      />
+      <span className="font-display text-[1.35rem] font-semibold leading-none tracking-[0.28em] text-gold transition-colors duration-300 group-hover:text-gold-soft sm:text-[1.5rem]">
+        NORDBLADE
+      </span>
       {showTagline ? (
-        <span className="mt-1 text-[0.55rem] tracking-[0.22em] text-muted sm:text-[0.58rem]">
+        <span className="mt-1.5 text-[0.55rem] tracking-[0.22em] text-muted sm:text-[0.58rem]">
           {siteConfig.tagline}
         </span>
       ) : null}

@@ -82,7 +82,7 @@ export function FullBleedHero({
           ) : null}
 
           <motion.p
-            className="mb-3 text-xs tracking-[0.18em] text-crimson-soft"
+            className="mb-3 text-[0.7rem] font-medium tracking-[0.22em] text-gold uppercase"
             initial={animate ? { opacity: 0, y: 12 } : false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -91,7 +91,7 @@ export function FullBleedHero({
           </motion.p>
 
           <motion.h1
-            className="font-display text-4xl leading-[1.15] text-text sm:text-5xl text-balance"
+            className="font-display text-[1.85rem] font-semibold leading-[1.2] tracking-[0.04em] text-text uppercase sm:text-4xl lg:text-[2.65rem] text-balance"
             initial={animate ? { opacity: 0, y: 16 } : false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.08 }}

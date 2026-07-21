@@ -27,7 +27,7 @@ export function CTABanner({
       <div className="absolute inset-0 bg-gradient-to-r from-bg/75 via-bg/55 to-bg/35" />
       <div className="relative mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-4 py-16 md:flex-row md:items-center lg:px-6">
         <div className="max-w-2xl">
-          <h2 className="font-display text-3xl text-text sm:text-4xl">
+          <h2 className="font-display text-3xl font-semibold tracking-[0.04em] text-text uppercase sm:text-4xl">
             {title}
           </h2>
           {description ? (

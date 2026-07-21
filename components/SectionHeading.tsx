@@ -18,13 +18,13 @@ export function SectionHeading({
   return (
     <div className={`flex max-w-3xl flex-col ${alignment} ${className}`}>
       {eyebrow ? (
-        <p className="mb-3 flex items-center gap-3 text-xs tracking-[0.18em] text-crimson-soft">
+        <p className="mb-3 flex items-center gap-3 text-[0.7rem] font-medium tracking-[0.2em] text-gold uppercase">
           <span className="hidden h-px w-8 bg-gold/40 sm:block" aria-hidden />
           {eyebrow}
           <span className="hidden h-px w-8 bg-gold/40 sm:block" aria-hidden />
         </p>
       ) : null}
-      <h2 className="font-display text-3xl leading-tight text-text sm:text-4xl text-balance">
+      <h2 className="font-display text-3xl font-semibold leading-tight tracking-[0.04em] text-text uppercase sm:text-4xl text-balance">
         {title}
       </h2>
       {description ? (
