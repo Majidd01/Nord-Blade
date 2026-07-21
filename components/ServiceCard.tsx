@@ -25,7 +25,7 @@ export function ServiceCard({ service, index, showImage = true }: ServiceCardPro
 
   return (
     <motion.article
-      className="group flex h-full flex-col overflow-hidden rounded-lg border border-gold/25 bg-surface transition-colors hover:border-gold/50"
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gold/20 bg-surface/80 transition-colors hover:border-gold/40"
       initial={reduceMotion ? false : { opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -50,7 +50,7 @@ export function ServiceCard({ service, index, showImage = true }: ServiceCardPro
           <span className="flex h-8 w-8 items-center justify-center rounded-full border border-gold/50 font-display text-xs text-gold">
             {service.number}
           </span>
-          <h3 className="font-display text-xl tracking-[0.1em] text-text uppercase">
+          <h3 className="font-display text-xl text-text">
             {service.title}
           </h3>
         </div>
@@ -77,7 +77,7 @@ export function ServiceCard({ service, index, showImage = true }: ServiceCardPro
           />
           <Link
             href={service.href}
-            className="text-center font-display text-xs tracking-[0.2em] text-gold uppercase transition-colors hover:text-gold-soft"
+            className="text-center text-sm text-gold transition-colors hover:text-gold-soft"
           >
             Learn more →
           </Link>

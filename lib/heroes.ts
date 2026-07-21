@@ -28,4 +28,8 @@ export const heroImages = {
     background: "/images/bg-contact.png",
     knife: "/images/hero-knife.png",
   },
+  partner: {
+    background: "/images/bg-about.png",
+    knife: "/images/hero-knife.png",
+  },
 } as const;

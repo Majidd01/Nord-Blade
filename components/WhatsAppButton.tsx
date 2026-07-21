@@ -32,11 +32,11 @@ export function WhatsAppButton({
   size = "md",
 }: WhatsAppButtonProps) {
   const base =
-    "inline-flex items-center justify-center rounded-md font-display tracking-[0.12em] uppercase transition-all duration-300";
+    "inline-flex items-center justify-center rounded-full font-medium tracking-wide transition-all duration-300";
   const styles =
     variant === "solid"
-      ? "bg-gold text-bg hover:bg-gold-soft shadow-[0_0_0_1px_rgba(197,160,89,0.4)]"
-      : "border border-gold/70 text-text hover:border-gold hover:bg-gold/10";
+      ? "bg-gold text-bg hover:bg-gold-soft shadow-sm"
+      : "border border-gold/50 text-text hover:border-gold hover:bg-gold/8";
 
   return (
     <a
@@ -49,7 +49,7 @@ export function WhatsAppButton({
       <span className="flex flex-col items-start leading-tight">
         <span>{label}</span>
         {sublabel ? (
-          <span className="mt-0.5 text-[0.65rem] font-sans tracking-normal normal-case opacity-80">
+          <span className="mt-0.5 text-[0.65rem] font-normal tracking-normal opacity-75">
             {sublabel}
           </span>
         ) : null}

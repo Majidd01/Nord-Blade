@@ -57,14 +57,15 @@ export function FullBleedHero({
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/15" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/25" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_50%,rgba(158,74,74,0.08),transparent_50%)]" />
       </div>
 
       <div className="relative z-20 mx-auto grid min-h-[88vh] max-w-7xl items-center gap-8 px-4 py-16 lg:grid-cols-[1fr_1.05fr] lg:px-6 lg:py-20">
         <div className="max-w-xl">
           {breadcrumbs ? (
-            <p className="mb-4 text-xs tracking-[0.16em] text-muted uppercase">
+            <p className="mb-4 text-xs tracking-wide text-muted">
               {breadcrumbs.map((crumb, i) => (
                 <span key={crumb.label}>
                   {i > 0 ? <span className="mx-2 text-gold/50">›</span> : null}
@@ -81,7 +82,7 @@ export function FullBleedHero({
           ) : null}
 
           <motion.p
-            className="mb-3 font-display text-xs tracking-[0.28em] text-gold uppercase"
+            className="mb-3 text-xs tracking-[0.18em] text-crimson-soft"
             initial={animate ? { opacity: 0, y: 12 } : false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -90,7 +91,7 @@ export function FullBleedHero({
           </motion.p>
 
           <motion.h1
-            className="font-display text-4xl leading-[1.1] tracking-[0.05em] text-text uppercase sm:text-5xl text-balance"
+            className="font-display text-4xl leading-[1.15] text-text sm:text-5xl text-balance"
             initial={animate ? { opacity: 0, y: 16 } : false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.08 }}

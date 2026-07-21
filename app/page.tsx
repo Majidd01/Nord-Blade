@@ -9,7 +9,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ValueBar } from "@/components/ValueBar";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { heroImages } from "@/lib/heroes";
-import { homeBenefits, services, stats } from "@/lib/site";
+import { homeBenefits, partnerProgram, services, stats } from "@/lib/site";
 
 const benefitIcons = [
   "M12 2l2.2 6.6H21l-5.4 3.9 2.1 6.5L12 15.8 6.3 19l2.1-6.5L3 8.6h6.8L12 2z",
@@ -68,7 +68,7 @@ export default function HomePage() {
                   </svg>
                 </span>
                 <div>
-                  <p className="font-display text-xs tracking-[0.16em] text-gold uppercase">
+                  <p className="font-display text-sm text-gold">
                     {benefit.title}
                   </p>
                   <p className="mt-1 text-sm text-muted">{benefit.description}</p>
@@ -85,7 +85,7 @@ export default function HomePage() {
             />
             <Link
               href="/services"
-              className="inline-flex items-center justify-center rounded-md border border-gold/70 px-7 py-4 font-display text-sm tracking-[0.12em] text-text uppercase transition-colors hover:border-gold hover:bg-gold/10"
+              className="inline-flex items-center justify-center rounded-full border border-gold/50 px-7 py-4 text-sm text-text transition-colors hover:border-gold hover:bg-gold/10"
             >
               Explore Services
             </Link>
@@ -105,7 +105,7 @@ export default function HomePage() {
           {services.map((service, index) => (
             <motion.article
               key={service.slug}
-              className="group rounded-lg border border-gold/20 bg-surface/50 p-7 transition-colors hover:border-gold/50"
+              className="group rounded-2xl border border-gold/15 bg-surface/50 p-7 transition-colors hover:border-gold/35"
               initial={reduceMotion ? false : { opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
@@ -117,16 +117,16 @@ export default function HomePage() {
                   <path d={serviceIcons[index]} />
                 </svg>
               </div>
-              <p className="font-display text-xs tracking-[0.2em] text-gold uppercase">
+              <p className="font-display text-sm text-gold">
                 {service.number}
               </p>
-              <h3 className="mt-2 font-display text-xl tracking-[0.1em] text-text uppercase">
+              <h3 className="mt-2 font-display text-xl text-text">
                 {service.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-muted">{service.short}</p>
               <Link
                 href={service.href}
-                className="mt-6 inline-flex font-display text-xs tracking-[0.2em] text-gold uppercase transition-colors group-hover:text-gold-soft"
+                className="mt-6 inline-flex text-sm text-gold transition-colors group-hover:text-gold-soft"
               >
                 Learn more →
               </Link>
@@ -137,7 +137,7 @@ export default function HomePage() {
         <div className="mt-10 text-center">
           <Link
             href="/services"
-            className="font-display text-sm tracking-[0.18em] text-gold uppercase underline-offset-4 hover:underline"
+            className="text-sm text-gold underline-offset-4 hover:underline"
           >
             View all services →
           </Link>
@@ -145,6 +145,48 @@ export default function HomePage() {
       </section>
 
       <ValueBar />
+
+      {/* Partner Program highlight */}
+      <section className="relative overflow-hidden border-y border-crimson/10">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,rgba(158,74,74,0.1),transparent_55%)]" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 lg:grid-cols-2 lg:px-6">
+          <div>
+            <p className="text-xs tracking-[0.18em] text-crimson-soft">🤝 Partner Program</p>
+            <h2 className="mt-3 font-display text-3xl text-text sm:text-4xl">
+              Invest With Us. <span className="text-gold">Share the Profits.</span>
+            </h2>
+            <p className="mt-4 max-w-lg text-muted">
+              Bring investment — we build and grow the business together. Manufacturing,
+              branding, and sales on our side; transparent profit sharing on both sides.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href={partnerProgram.href}
+                className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-medium text-bg transition-colors hover:bg-gold-soft"
+              >
+                Learn About Partnership
+              </Link>
+              <WhatsAppButton
+                size="sm"
+                label="Discuss on WhatsApp"
+                message={partnerProgram.message}
+              />
+            </div>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+            {partnerProgram.steps.map((step) => (
+              <div
+                key={step.number}
+                className="rounded-2xl border border-gold/15 bg-surface/40 p-5"
+              >
+                <p className="font-display text-2xl text-crimson-soft">{step.number}</p>
+                <p className="mt-2 font-display text-lg text-gold">{step.title}</p>
+                <p className="mt-2 text-xs leading-relaxed text-muted">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Featured path deep-dives */}
       {pathFeatures.map((path, index) => {
@@ -176,7 +218,7 @@ export default function HomePage() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                <span className="absolute bottom-4 left-4 font-display text-sm tracking-[0.2em] text-gold uppercase">
+                <span className="absolute bottom-4 left-4 font-display text-sm text-gold">
                   {path.number} {path.title}
                 </span>
               </motion.div>
@@ -188,10 +230,10 @@ export default function HomePage() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                <p className="font-display text-xs tracking-[0.28em] text-gold uppercase">
+                <p className="text-sm text-gold">
                   {path.tagline}
                 </p>
-                <h2 className="mt-3 font-display text-3xl tracking-[0.06em] text-text uppercase sm:text-4xl">
+                <h2 className="mt-3 font-display text-3xl text-text sm:text-4xl">
                   {path.title}
                 </h2>
                 <p className="mt-4 max-w-lg text-base leading-relaxed text-muted">
@@ -210,7 +252,7 @@ export default function HomePage() {
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Link
                     href={path.href}
-                    className="inline-flex items-center justify-center rounded-md bg-gold px-6 py-3.5 font-display text-sm tracking-[0.12em] text-bg uppercase transition-colors hover:bg-gold-soft"
+                    className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-medium text-bg transition-colors hover:bg-gold-soft"
                   >
                     Explore {path.title.split(" ").slice(0, 2).join(" ")}
                   </Link>
@@ -244,7 +286,7 @@ export default function HomePage() {
             />
             <Link
               href="/about"
-              className="shrink-0 font-display text-sm tracking-[0.18em] text-gold uppercase transition-colors hover:text-gold-soft"
+              className="shrink-0 text-sm text-gold transition-colors hover:text-gold-soft"
             >
               About NORDBLADE →
             </Link>
@@ -272,7 +314,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-20 lg:px-6">
         <div className="grid gap-6 lg:grid-cols-2">
           <motion.div
-            className="relative min-h-[320px] overflow-hidden border border-gold/20"
+            className="relative min-h-[320px] overflow-hidden rounded-2xl border border-gold/15"
             initial={reduceMotion ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -287,10 +329,10 @@ export default function HomePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
             <div className="absolute inset-0 flex flex-col justify-end p-8">
-              <p className="font-display text-xs tracking-[0.28em] text-gold uppercase">
+              <p className="text-sm text-gold">
                 Our Story
               </p>
-              <h2 className="mt-2 font-display text-2xl tracking-[0.06em] text-text uppercase sm:text-3xl">
+              <h2 className="mt-2 font-display text-2xl text-text sm:text-3xl">
                 Passion. Precision. Partnership.
               </h2>
               <p className="mt-3 max-w-md text-sm text-muted">
@@ -298,7 +340,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="/about"
-                className="mt-6 inline-flex w-fit font-display text-xs tracking-[0.2em] text-gold uppercase hover:text-gold-soft"
+                className="mt-6 inline-flex w-fit text-sm text-gold hover:text-gold-soft"
               >
                 Read about us →
               </Link>
@@ -306,7 +348,7 @@ export default function HomePage() {
           </motion.div>
 
           <motion.div
-            className="relative min-h-[320px] overflow-hidden border border-gold/20"
+            className="relative min-h-[320px] overflow-hidden rounded-2xl border border-gold/15"
             initial={reduceMotion ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -321,10 +363,10 @@ export default function HomePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
             <div className="absolute inset-0 flex flex-col justify-end p-8">
-              <p className="font-display text-xs tracking-[0.28em] text-gold uppercase">
+              <p className="text-sm text-gold">
                 Get In Touch
               </p>
-              <h2 className="mt-2 font-display text-2xl tracking-[0.06em] text-text uppercase sm:text-3xl">
+              <h2 className="mt-2 font-display text-2xl text-text sm:text-3xl">
                 Let&apos;s Build Something Extraordinary.
               </h2>
               <p className="mt-3 max-w-md text-sm text-muted">
@@ -333,7 +375,7 @@ export default function HomePage() {
               <div className="mt-6 flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex font-display text-xs tracking-[0.2em] text-gold uppercase hover:text-gold-soft"
+                  className="inline-flex text-sm text-gold hover:text-gold-soft"
                 >
                   Contact page →
                 </Link>
@@ -351,6 +393,7 @@ export default function HomePage() {
             { href: "/launch-your-brand", label: "Launch" },
             { href: "/oem-manufacturing", label: "OEM" },
             { href: "/grow-your-brand", label: "Grow" },
+            { href: "/partner-program", label: "Partner" },
             { href: "/services", label: "Services" },
             { href: "/about", label: "About" },
             { href: "/contact", label: "Contact" },
@@ -358,7 +401,7 @@ export default function HomePage() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-display text-xs tracking-[0.22em] text-muted uppercase transition-colors hover:text-gold"
+              className="text-sm text-muted transition-colors hover:text-gold"
             >
               {link.label}
             </Link>
@@ -367,8 +410,8 @@ export default function HomePage() {
       </section>
 
       <CTABanner
-        title="Ready to Build Your Blade Legacy?"
-        description="Tell us where you are — idea, bulk order, or growth plateau — and we'll take the next step with you."
+        title="Ready to Start Your Journey?"
+        description="Tell us where you are — idea, bulk order, growth plateau, or partnership — and we'll take the next step with you."
         message="Hi NORDBLADE, I'm ready to start."
       />
     </>

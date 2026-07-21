@@ -19,7 +19,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="font-display text-sm tracking-[0.2em] text-gold uppercase">
+          <h2 className="font-display text-sm tracking-wide text-gold">
             Explore
           </h2>
           <ul className="mt-4 space-y-2">
@@ -37,7 +37,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="font-display text-sm tracking-[0.2em] text-gold uppercase">
+          <h2 className="font-display text-sm tracking-wide text-gold">
             Contact
           </h2>
           <ul className="mt-4 space-y-2 text-sm text-muted">

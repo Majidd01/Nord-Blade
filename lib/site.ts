@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "NORDBLADE",
-  tagline: "BUILD. SCALE. DOMINATE.",
+  tagline: "Partnership · Craft · Growth",
   description:
     "Premium knife manufacturing and brand growth partner. Launch, manufacture, and scale knife brands with NORDBLADE.",
   whatsappNumber:
@@ -25,10 +25,50 @@ export const navLinks = [
   { href: "/launch-your-brand", label: "Launch Your Brand" },
   { href: "/oem-manufacturing", label: "OEM Manufacturing" },
   { href: "/grow-your-brand", label: "Grow Your Brand" },
+  { href: "/partner-program", label: "Partner Program" },
   { href: "/services", label: "Services" },
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact Us" },
 ] as const;
+
+export const partnerProgram = {
+  href: "/partner-program",
+  message: "Hi NORDBLADE, I'm interested in the Partner Program and would like to discuss investment.",
+  steps: [
+    {
+      number: "01",
+      title: "You Invest",
+      description:
+        "Bring capital and a vision. We align on goals, timeline, and the level of involvement you want.",
+    },
+    {
+      number: "02",
+      title: "We Build Together",
+      description:
+        "NORDBLADE handles manufacturing, branding, operations, and growth strategy — you stay informed at every step.",
+    },
+    {
+      number: "03",
+      title: "Shared Profits",
+      description:
+        "As the business grows, profits are shared transparently based on the partnership structure we agree on.",
+    },
+  ],
+  benefits: [
+    "Access to premium knife manufacturing",
+    "Full brand-building support",
+    "Marketing & sales guidance",
+    "Transparent profit sharing",
+    "Long-term partnership mindset",
+    "Lower risk than going solo",
+  ],
+  idealFor: [
+    "Investors seeking a tangible product business",
+    "Entrepreneurs who want expertise, not just capital deployment",
+    "Partners who value craftsmanship and brand quality",
+    "Anyone ready to build a knife brand with shared upside",
+  ],
+} as const;
 
 export const stats = [
   { value: "10+", label: "Years Experience" },

@@ -23,11 +23,11 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-bg/85 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-6">
+    <header className="sticky top-0 z-50 border-b border-white/5 bg-bg/90 backdrop-blur-md">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 lg:px-6">
         <Logo />
 
-        <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Primary">
           {navLinks.map((link) => {
             const active =
               link.href === "/"
@@ -37,16 +37,14 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative px-2.5 py-2 text-[0.68rem] tracking-[0.14em] uppercase transition-colors ${
-                  active ? "text-gold" : "text-text/80 hover:text-gold"
+                className={`relative px-2.5 py-2 text-[0.72rem] tracking-wide transition-colors ${
+                  active ? "text-gold" : "text-muted hover:text-text"
                 }`}
               >
                 {link.label}
-                <span
-                  className={`absolute inset-x-2 -bottom-0.5 h-px origin-left bg-gold transition-transform duration-300 ${
-                    active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                  }`}
-                />
+                {active ? (
+                  <span className="absolute inset-x-3 -bottom-0.5 h-px bg-crimson-soft/60" />
+                ) : null}
               </Link>
             );
           })}
@@ -58,7 +56,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gold/40 text-gold xl:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gold/30 text-gold xl:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -89,8 +87,8 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={closeMenu}
-                  className={`border-b border-white/5 py-3 text-sm tracking-[0.16em] uppercase ${
-                    active ? "text-gold" : "text-text"
+                  className={`border-b border-white/5 py-3 text-sm tracking-wide ${
+                    active ? "text-gold" : "text-muted"
                   }`}
                 >
                   {link.label}
