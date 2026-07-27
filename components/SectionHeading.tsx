@@ -24,7 +24,7 @@ export function SectionHeading({
           <span className="hidden h-px w-8 bg-gold/40 sm:block" aria-hidden />
         </p>
       ) : null}
-      <h2 className="font-display text-3xl font-semibold leading-tight tracking-[0.04em] text-text uppercase sm:text-4xl text-balance">
+      <h2 className="font-display text-4xl leading-[1.05] text-text sm:text-5xl text-balance">
         {title}
       </h2>
       {description ? (

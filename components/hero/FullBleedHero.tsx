@@ -45,8 +45,9 @@ export function FullBleedHero({
   const animate = ready && !reduceMotionPref;
 
   return (
-    <section className="relative min-h-[88vh] overflow-hidden border-b border-white/5">
-      <div className="absolute inset-0 overflow-hidden">
+    <section className="relative min-h-0 overflow-hidden border-b border-white/5 md:min-h-[88vh]">
+      {/* Background image — desktop only */}
+      <div className="absolute inset-0 hidden overflow-hidden md:block" aria-hidden>
         <div className="absolute inset-0" style={backgroundStyle}>
           <Image
             src={backgroundSrc}
@@ -59,10 +60,13 @@ export function FullBleedHero({
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-bg/80 via-bg/50 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-bg/45 via-transparent to-bg/10" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_50%,rgba(168,90,90,0.06),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_50%,rgba(197,157,95,0.06),transparent_50%)]" />
       </div>
 
-      <div className="relative z-20 mx-auto grid min-h-[88vh] max-w-7xl items-center gap-8 px-4 py-16 lg:grid-cols-[1fr_1.05fr] lg:px-6 lg:py-20">
+      {/* Mobile solid background */}
+      <div className="absolute inset-0 bg-bg md:hidden" aria-hidden />
+
+      <div className="relative z-20 mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 md:min-h-[88vh] md:grid-cols-[1fr_1.05fr] md:px-6 md:py-20">
         <div className="max-w-xl">
           {breadcrumbs ? (
             <p className="mb-4 text-xs tracking-wide text-muted">
@@ -91,7 +95,7 @@ export function FullBleedHero({
           </motion.p>
 
           <motion.h1
-            className="font-display text-[2rem] font-semibold leading-[1.15] tracking-[0.06em] text-text uppercase sm:text-4xl lg:text-[2.75rem] text-balance"
+            className="font-display text-[2.4rem] leading-[1.05] text-text sm:text-5xl lg:text-[3.4rem] text-balance"
             initial={animate ? { opacity: 0, y: 16 } : false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.08 }}
@@ -120,7 +124,8 @@ export function FullBleedHero({
           ) : null}
         </div>
 
-        <div className="relative mx-auto h-[540px] w-full max-w-lg overflow-visible sm:h-[620px] lg:max-w-none lg:h-[760px]">
+        {/* Knife image — desktop only */}
+        <div className="relative mx-auto hidden h-[540px] w-full max-w-lg overflow-visible sm:h-[620px] md:block lg:max-w-none lg:h-[760px]">
           <div className="pointer-events-none absolute bottom-[6%] left-[52%] h-24 w-[75%] -translate-x-1/2 rounded-[100%] bg-bg/50 blur-3xl" />
 
           <motion.div
@@ -200,7 +205,6 @@ export function FullBleedHero({
                 sizes="(max-width: 1024px) 95vw, 720px"
               />
 
-              {/* Steel gleam sweep */}
               {animate ? (
                 <motion.div
                   className="pointer-events-none absolute inset-0 overflow-hidden"
@@ -219,7 +223,6 @@ export function FullBleedHero({
             </motion.div>
           </motion.div>
 
-          {/* Impact flash + ground shockwave */}
           {animate ? (
             <>
               <motion.div

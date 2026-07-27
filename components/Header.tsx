@@ -23,11 +23,11 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/8 bg-surface/75 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 lg:px-6">
+    <header className="sticky top-0 z-50 border-b border-white/5 bg-bg">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-6 px-5 py-4 lg:px-8">
         <Logo />
 
-        <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary">
           {navLinks.map((link) => {
             const active =
               link.href === "/"
@@ -37,26 +37,30 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative px-2.5 py-2 text-[0.68rem] font-medium tracking-[0.14em] uppercase transition-colors ${
-                  active ? "text-gold" : "text-text/85 hover:text-gold"
+                className={`relative px-2.5 py-2 text-[0.65rem] font-medium tracking-[0.16em] uppercase transition-colors ${
+                  active ? "text-gold" : "text-[#e0e0e0] hover:text-gold"
                 }`}
               >
                 {link.label}
                 {active ? (
-                  <span className="absolute inset-x-2.5 -bottom-0.5 h-px bg-gold" />
+                  <span className="absolute inset-x-2 -bottom-0.5 h-px bg-gold" />
                 ) : null}
               </Link>
             );
           })}
         </nav>
 
-        <div className="hidden shrink-0 lg:block">
-          <WhatsAppButton size="sm" message="Hi NORDBLADE, I'd like to chat about my project." />
+        <div className="hidden shrink-0 xl:block">
+          <WhatsAppButton
+            size="sm"
+            variant="outline"
+            message="Hi NORDBLADE, I'd like to chat about my project."
+          />
         </div>
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gold/30 text-gold xl:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gold/40 text-gold xl:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -75,8 +79,8 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="border-t border-white/5 bg-surface xl:hidden">
-          <nav className="mx-auto flex max-w-7xl flex-col px-4 py-4" aria-label="Mobile">
+        <div className="border-t border-white/5 bg-bg xl:hidden">
+          <nav className="mx-auto flex max-w-7xl flex-col px-5 py-4" aria-label="Mobile">
             {navLinks.map((link) => {
               const active =
                 link.href === "/"
@@ -87,17 +91,18 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={closeMenu}
-                  className={`border-b border-white/5 py-3 text-sm tracking-wide ${
-                    active ? "text-gold" : "text-muted"
+                  className={`border-b border-white/5 py-3.5 text-[0.7rem] font-medium tracking-[0.16em] uppercase ${
+                    active ? "text-gold" : "text-[#e0e0e0]"
                   }`}
                 >
                   {link.label}
                 </Link>
               );
             })}
-            <div className="pt-4">
+            <div className="pt-5">
               <WhatsAppButton
                 className="w-full"
+                variant="outline"
                 message="Hi NORDBLADE, I'd like to chat about my project."
               />
             </div>
