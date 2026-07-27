@@ -29,13 +29,23 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  metadataBase: new URL("https://nordblade.com"),
+  metadataBase: new URL("https://www.nordblade.co.uk"),
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/icon.svg" }],
+  },
   openGraph: {
     title: `${siteConfig.name} | Premium Knife Brands & Manufacturing`,
     description: siteConfig.description,
     type: "website",
-    locale: "en_US",
+    locale: "en_GB",
     siteName: siteConfig.name,
+    url: "https://www.nordblade.co.uk",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} | Premium Knife Brands & Manufacturing`,
+    description: siteConfig.description,
   },
 };
 
