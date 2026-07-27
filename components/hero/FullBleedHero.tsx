@@ -91,7 +91,7 @@ export function FullBleedHero({
           </motion.p>
 
           <motion.h1
-            className="font-display text-[1.85rem] font-semibold leading-[1.2] tracking-[0.04em] text-text uppercase sm:text-4xl lg:text-[2.65rem] text-balance"
+            className="font-display text-[2rem] font-semibold leading-[1.15] tracking-[0.06em] text-text uppercase sm:text-4xl lg:text-[2.75rem] text-balance"
             initial={animate ? { opacity: 0, y: 16 } : false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.08 }}

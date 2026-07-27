@@ -16,11 +16,12 @@ export default function PartnerProgramPage() {
   return (
     <>
       <FullBleedHero
-        eyebrow="🤝 NordBlade Partner Program"
+        eyebrow="NordBlade Partner Program"
         title={
           <>
-            Invest With Us.{" "}
-            <span className="text-gold">Grow Together.</span>
+            Become a Partner.
+            <br />
+            <span className="text-gold">Build a Legacy Together.</span>
           </>
         }
         description="Bring your investment — we bring manufacturing, brand expertise, and growth. Build a profitable knife business with transparent profit sharing between both partners."
@@ -34,8 +35,8 @@ export default function PartnerProgramPage() {
         <WhatsAppButton
           variant="solid"
           size="lg"
-          label="Discuss Partnership"
-          sublabel="Chat on WhatsApp"
+          label="Discuss on WhatsApp"
+          sublabel="Partnership enquiries"
           message={partnerProgram.message}
         />
       </FullBleedHero>

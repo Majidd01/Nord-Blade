@@ -5,12 +5,18 @@ export const siteConfig = {
     "Premium knife manufacturing and brand growth partner. Launch, manufacture, and scale knife brands with NORDBLADE.",
   whatsappNumber:
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "") || "923240000002",
+  whatsappDisplay: "+92 324 0000002",
   email: "hello@nordblade.com",
   emailShipping: "shipping@nordblade.com",
-  phone: "+92 324 0000002",
+  phoneUK: "+44 7405 012119",
+  phone: "+44 7405 012119",
   phoneAlt: "+92 324 0000002",
-  address: "Sialkot, Punjab, Pakistan",
-  hours: "Monday – Saturday, 9:00 AM – 6:00 PM",
+  registration: "Registered in England & Wales",
+  manufacturing: "Sialkot, Pakistan",
+  address: "Sialkot, Pakistan",
+  hoursDays: "Monday – Friday",
+  hoursTime: "09:00 AM – 06:00 PM (UK Time)",
+  hours: "Monday – Friday, 09:00 AM – 06:00 PM (UK Time)",
   investmentNote: "$5,000",
 };
 

@@ -4,9 +4,9 @@
   --bg: #1c1b18;
   --surface: #262420;
   --surface-elevated: #302d28;
-  --gold: #c9a86a;
-  --gold-deep: #a8874f;
-  --gold-soft: #e0cfa0;
+  --gold: #c59d5f;
+  --gold-deep: #a8843f;
+  --gold-soft: #dcc08a;
   --crimson: #a85a5a;
   --crimson-soft: #c47a7a;
   --crimson-muted: rgba(168, 90, 90, 0.12);
@@ -31,7 +31,7 @@
   --color-border: var(--border);
   --color-silver: var(--silver);
   --font-sans: var(--font-dm-sans);
-  --font-display: var(--font-cinzel);
+  --font-display: var(--font-cormorant);
 }
 
 html {
@@ -58,7 +58,8 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-cinzel), "Times New Roman", serif;
+  font-family: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  font-weight: 600;
 }
 
 .bg-atmosphere {
