@@ -32,63 +32,29 @@ export default function OpenGraphImage() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: 28,
+            gap: 12,
           }}
         >
-          {/* Circle + triangle mark */}
           <div
             style={{
-              width: 140,
-              height: 140,
-              borderRadius: 999,
-              background: "#050505",
-              border: "3px solid #c5a059",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              fontSize: 72,
+              letterSpacing: 18,
+              color: "#c5a059",
+              fontWeight: 700,
+              textTransform: "uppercase",
             }}
           >
-            <div
-              style={{
-                width: 0,
-                height: 0,
-                borderLeft: "36px solid transparent",
-                borderRight: "36px solid transparent",
-                borderBottom: "62px solid #ffffff",
-                marginBottom: 8,
-              }}
-            />
+            NORDBLADE
           </div>
-
           <div
             style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 12,
+              fontSize: 22,
+              letterSpacing: 8,
+              color: "#b0aaa2",
+              textTransform: "uppercase",
             }}
           >
-            <div
-              style={{
-                fontSize: 72,
-                letterSpacing: 18,
-                color: "#c5a059",
-                fontWeight: 700,
-                textTransform: "uppercase",
-              }}
-            >
-              NORDBLADE
-            </div>
-            <div
-              style={{
-                fontSize: 22,
-                letterSpacing: 8,
-                color: "#b0aaa2",
-                textTransform: "uppercase",
-              }}
-            >
-              Premium Knife Brands & Manufacturing
-            </div>
+            Premium Knife Brands & Manufacturing
           </div>
         </div>
       </div>

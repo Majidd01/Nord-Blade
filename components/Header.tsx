@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
+import { ProductsDropdown } from "@/components/ProductsDropdown";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { navLinks } from "@/lib/site";
 
@@ -32,6 +33,9 @@ export function Header() {
           aria-label="Primary"
         >
           {navLinks.map((link) => {
+            if (link.href === "/products") {
+              return <ProductsDropdown key={link.href} />;
+            }
             const active =
               link.href === "/"
                 ? pathname === "/"
@@ -86,6 +90,15 @@ export function Header() {
         <div className="border-t border-white/5 bg-bg lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col px-5 py-4" aria-label="Mobile">
             {navLinks.map((link) => {
+              if (link.href === "/products") {
+                return (
+                  <ProductsDropdown
+                    key={link.href}
+                    variant="mobile"
+                    onNavigate={closeMenu}
+                  />
+                );
+              }
               const active =
                 link.href === "/"
                   ? pathname === "/"

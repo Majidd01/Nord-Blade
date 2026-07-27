@@ -32,4 +32,8 @@ export const heroImages = {
     background: "/images/hero-scene-clean.png",
     knife: "/images/hero-knife.png",
   },
+  products: {
+    background: "/images/hero-scene-clean.png",
+    knife: "/images/hero-knife.png",
+  },
 } as const;

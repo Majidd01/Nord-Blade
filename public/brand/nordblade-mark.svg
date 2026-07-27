@@ -1,4 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="NORDBLADE">
-  <circle cx="32" cy="32" r="30" fill="#050505" stroke="#c5a059" strokeWidth="2.5"/>
-  <path fill="#ffffff" d="M32 16 L48 44 H16 Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none" role="img" aria-label="NORDBLADE">
+  <text x="0" y="36" fill="#c5a059" font-family="Georgia, serif" font-size="32" font-weight="600" letter-spacing="6">NORDBLADE</text>
 </svg>
