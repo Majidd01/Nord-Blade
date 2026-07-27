@@ -6,18 +6,18 @@ import { navLinks, siteConfig, whatsappUrl } from "@/lib/site";
 export function Footer() {
   return (
     <footer className="mt-auto border-t border-white/8 bg-surface/90">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-[1.2fr_1fr_1.1fr] lg:px-6">
+      <div className="mx-auto grid max-w-7xl gap-6 px-4 py-8 md:grid-cols-[1.2fr_1fr_1.1fr] lg:px-6">
         <div>
           <Logo />
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
+          <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
             Premium knife manufacturing and brand growth partner. Launch, manufacture,
             and scale with confidence.
           </p>
-          <div className="mt-5 space-y-2 text-xs font-medium tracking-[0.12em] text-muted uppercase">
+          <div className="mt-3 space-y-1.5 text-xs font-medium tracking-[0.12em] text-muted uppercase">
             <p>📍 {siteConfig.registration}</p>
             <p>🏭 Manufacturing: {siteConfig.manufacturing}</p>
           </div>
-          <div className="mt-6">
+          <div className="mt-4">
             <WhatsAppButton size="sm" />
           </div>
         </div>

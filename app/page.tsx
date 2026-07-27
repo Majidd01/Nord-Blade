@@ -97,14 +97,14 @@ export default function HomePage() {
       </FullBleedHero>
 
       {/* Three paths overview */}
-      <section className="mx-auto max-w-7xl px-4 py-20 lg:px-6">
+      <section className="mx-auto max-w-7xl px-4 py-10 lg:px-6">
         <SectionHeading
           eyebrow="Three Paths"
           title="One Partner. Every Stage."
           description="Whether you are starting from scratch, manufacturing at scale, or fighting for traction — we have a clear path forward."
         />
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-6 grid gap-6 lg:grid-cols-3">
           {services.map((service, index) => (
             <motion.article
               key={service.slug}
@@ -137,7 +137,7 @@ export default function HomePage() {
           ))}
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-5 text-center">
           <Link
             href="/services"
             className="text-sm text-gold underline-offset-4 hover:underline"
@@ -152,7 +152,7 @@ export default function HomePage() {
       {/* Partner Program highlight */}
       <section className="relative overflow-hidden border-y border-crimson/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,rgba(158,74,74,0.1),transparent_55%)]" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 lg:grid-cols-2 lg:px-6">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-6 px-4 py-10 lg:grid-cols-2 lg:px-6">
           <div>
             <p className="text-xs tracking-[0.18em] text-crimson-soft">🤝 Partner Program</p>
             <h2 className="mt-3 font-display text-3xl text-text sm:text-4xl">
@@ -162,7 +162,7 @@ export default function HomePage() {
               Bring investment — we build and grow the business together. Manufacturing,
               branding, and sales on our side; transparent profit sharing on both sides.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <Link
                 href={partnerProgram.href}
                 className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-medium text-bg transition-colors hover:bg-gold-soft"
@@ -200,7 +200,7 @@ export default function HomePage() {
             className="border-b border-white/5 bg-bg"
           >
             <div
-              className={`mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 lg:grid-cols-2 lg:px-6 ${
+              className={`mx-auto grid max-w-7xl items-center gap-6 px-4 py-10 lg:grid-cols-2 lg:px-6 ${
                 imageLeft ? "" : ""
               }`}
             >
@@ -220,7 +220,7 @@ export default function HomePage() {
                   className="object-cover transition-transform duration-700 hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-bg/55 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg/35 to-transparent" />
                 <span className="absolute bottom-4 left-4 font-display text-sm text-gold">
                   {path.number} {path.title}
                 </span>
@@ -252,7 +252,7 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Link
                     href={path.href}
                     className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-medium text-bg transition-colors hover:bg-gold-soft"
@@ -274,12 +274,12 @@ export default function HomePage() {
             src={heroImages.about.background}
             alt=""
             fill
-            className="object-cover opacity-35"
+            className="object-cover opacity-55"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-bg/65" />
+          <div className="absolute inset-0 bg-bg/55" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 py-20 lg:px-6">
+        <div className="relative mx-auto max-w-7xl px-4 py-10 lg:px-6">
           <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
             <SectionHeading
               align="left"
@@ -294,7 +294,7 @@ export default function HomePage() {
               About NORDBLADE →
             </Link>
           </div>
-          <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4">
+          <div className="mt-6 grid grid-cols-2 gap-5 md:grid-cols-4">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -314,10 +314,10 @@ export default function HomePage() {
       </section>
 
       {/* About + Contact split */}
-      <section className="mx-auto max-w-7xl px-4 py-20 lg:px-6">
+      <section className="mx-auto max-w-7xl px-4 py-10 lg:px-6">
         <div className="grid gap-6 lg:grid-cols-2">
           <motion.div
-            className="relative min-h-[320px] overflow-hidden rounded-2xl border border-gold/15"
+            className="relative min-h-[260px] overflow-hidden rounded-2xl border border-gold/15"
             initial={reduceMotion ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -330,7 +330,7 @@ export default function HomePage() {
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-bg/85 via-bg/45 to-bg/15" />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg/70 via-bg/30 to-transparent" />
             <div className="absolute inset-0 flex flex-col justify-end p-8">
               <p className="text-sm text-gold">
                 Our Story
@@ -351,7 +351,7 @@ export default function HomePage() {
           </motion.div>
 
           <motion.div
-            className="relative min-h-[320px] overflow-hidden rounded-2xl border border-gold/15"
+            className="relative min-h-[260px] overflow-hidden rounded-2xl border border-gold/15"
             initial={reduceMotion ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -364,7 +364,7 @@ export default function HomePage() {
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-bg/85 via-bg/45 to-bg/15" />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg/70 via-bg/30 to-transparent" />
             <div className="absolute inset-0 flex flex-col justify-end p-8">
               <p className="text-sm text-gold">
                 Get In Touch

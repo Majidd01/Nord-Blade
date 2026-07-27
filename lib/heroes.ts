@@ -1,35 +1,35 @@
-/** Per-page full-bleed hero imagery — same layout, different backgrounds */
+/** Per-page full-bleed hero banners — scene photos with knife already in frame */
 export const heroImages = {
   home: {
-    background: "/images/bg-home.png",
+    background: "/images/hero-banner-ornate.png",
     knife: "/images/hero-knife.png",
   },
   services: {
-    background: "/images/bg-services.png",
+    background: "/images/hero-scene-clean.png",
     knife: "/images/hero-knife.png",
   },
   launch: {
-    background: "/images/bg-launch.png",
+    background: "/images/hero-banner-ornate.png",
     knife: "/images/hero-knife.png",
   },
   oem: {
-    background: "/images/bg-oem.png",
+    background: "/images/hero-scene-clean.png",
     knife: "/images/hero-knife.png",
   },
   grow: {
-    background: "/images/hero-mountains-rocks.png",
+    background: "/images/hero-banner-ornate.png",
     knife: "/images/hero-knife.png",
   },
   about: {
-    background: "/images/bg-about.png",
+    background: "/images/hero-scene-clean.png",
     knife: "/images/hero-knife.png",
   },
   contact: {
-    background: "/images/bg-contact.png",
+    background: "/images/hero-banner-ornate.png",
     knife: "/images/hero-knife.png",
   },
   partner: {
-    background: "/images/bg-about.png",
+    background: "/images/hero-scene-clean.png",
     knife: "/images/hero-knife.png",
   },
 } as const;

@@ -48,12 +48,12 @@ export default function LaunchBrandPage() {
         </div>
       </FullBleedHero>
 
-      <section className="mx-auto max-w-7xl px-4 py-20 lg:px-6">
+      <section className="mx-auto max-w-7xl px-4 py-10 lg:px-6">
         <SectionHeading
           eyebrow="Our Proven Process"
           title="From Idea to First Sale — We're With You Every Step."
         />
-        <div className="mt-12">
+        <div className="mt-6">
           <ProcessSteps />
         </div>
       </section>

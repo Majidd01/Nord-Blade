@@ -32,85 +32,71 @@ export default function PartnerProgramPage() {
             alt=""
             fill
             priority
-            quality={90}
+            quality={100}
             className="object-cover object-center"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/88 to-black/50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/35" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 pt-10 pb-3 md:pt-12 md:pb-2 lg:px-6">
-          <div className="grid items-center gap-6 md:grid-cols-[1.1fr_0.9fr] md:gap-8">
-            <div className="max-w-xl">
-              <p className="text-[0.65rem] font-medium tracking-[0.26em] text-gold uppercase">
-                {p.heroEyebrow}
-              </p>
-              <h1 className="mt-2.5 font-display text-[2.15rem] leading-[1.05] tracking-[0.04em] text-text uppercase sm:text-4xl lg:text-[2.85rem]">
-                {p.heroTitleWhite}
-                <br />
-                <span className="text-gold">{p.heroTitleGold}</span>
-              </h1>
-              <p className="mt-3 max-w-lg text-sm leading-relaxed text-[#e5e5e5]">
-                {p.heroDescription}
-              </p>
+          <div className="max-w-xl lg:max-w-2xl">
+            <p className="text-[0.65rem] font-medium tracking-[0.26em] text-gold uppercase">
+              {p.heroEyebrow}
+            </p>
+            <h1 className="mt-2.5 font-display text-[2.15rem] leading-[1.05] tracking-[0.04em] text-text uppercase [text-shadow:0_2px_20px_rgba(0,0,0,0.65)] sm:text-4xl lg:text-[2.85rem]">
+              {p.heroTitleWhite}
+              <br />
+              <span className="text-gold">{p.heroTitleGold}</span>
+            </h1>
+            <p className="mt-3 max-w-lg text-sm leading-relaxed text-[#e5e5e5] [text-shadow:0_1px_12px_rgba(0,0,0,0.5)]">
+              {p.heroDescription}
+            </p>
 
-              {/* Hero highlight blocks — always visible */}
-              <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-2.5">
-                {p.heroHighlights.map((item) => (
-                  <div
-                    key={item.title}
-                    className="rounded-md border border-gold/35 bg-black/45 p-3 backdrop-blur-sm"
-                  >
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-gold/40 text-gold">
-                      <GoldIcon d={item.icon} className="h-4 w-4" />
-                    </span>
-                    <p className="mt-2 text-[0.58rem] font-semibold tracking-[0.12em] text-gold uppercase">
-                      {item.title}
-                    </p>
-                    <p className="mt-1 text-[0.68rem] leading-snug text-[#cfcfcf]">
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <WhatsAppButton
-                  variant="solid"
-                  size="md"
-                  label="Discuss on WhatsApp"
-                  message={p.message}
-                  className="!rounded-md tracking-[0.08em] uppercase"
-                />
-                <div className="inline-flex h-[42px] items-center gap-2.5 rounded-md bg-gold px-4 text-bg shadow-sm">
-                  <span className="text-[0.58rem] font-semibold leading-tight tracking-[0.12em] uppercase opacity-85">
-                    Min.
-                    <br />
-                    Investment
+            {/* Hero highlight blocks — always visible */}
+            <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-2.5">
+              {p.heroHighlights.map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-md border border-gold/35 bg-black/45 p-3 backdrop-blur-sm"
+                >
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-gold/40 text-gold">
+                    <GoldIcon d={item.icon} className="h-4 w-4" />
                   </span>
-                  <span className="h-6 w-px bg-bg/25" aria-hidden />
-                  <span className="font-display text-xl leading-none tracking-wide">
-                    {p.minInvestment}
-                  </span>
+                  <p className="mt-2 text-[0.58rem] font-semibold tracking-[0.12em] text-gold uppercase">
+                    {item.title}
+                  </p>
+                  <p className="mt-1 text-[0.68rem] leading-snug text-[#cfcfcf]">
+                    {item.description}
+                  </p>
                 </div>
-              </div>
-              <p className="mt-2 text-[0.68rem] text-[#bdbdbd]">
-                All details &amp; next steps will be discussed on WhatsApp.
-              </p>
+              ))}
             </div>
 
-            <div className="relative mx-auto hidden h-[340px] w-full max-w-md md:block lg:h-[400px]">
-              <Image
-                src={heroImages.partner.knife}
-                alt="Premium NORDBLADE knife"
-                fill
-                priority
-                quality={100}
-                className="object-contain object-bottom"
-                sizes="(max-width: 1024px) 50vw, 480px"
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <WhatsAppButton
+                variant="solid"
+                size="md"
+                label="Discuss on WhatsApp"
+                message={p.message}
+                className="!rounded-md tracking-[0.08em] uppercase"
               />
+              <div className="inline-flex h-[42px] items-center gap-2.5 rounded-md bg-gold px-4 text-bg shadow-sm">
+                <span className="text-[0.58rem] font-semibold leading-tight tracking-[0.12em] uppercase opacity-85">
+                  Min.
+                  <br />
+                  Investment
+                </span>
+                <span className="h-6 w-px bg-bg/25" aria-hidden />
+                <span className="font-display text-xl leading-none tracking-wide">
+                  {p.minInvestment}
+                </span>
+              </div>
             </div>
+            <p className="mt-2 text-[0.68rem] text-[#bdbdbd]">
+              All details &amp; next steps will be discussed on WhatsApp.
+            </p>
           </div>
 
           {/* Bottom banner blocks */}
@@ -297,12 +283,12 @@ export default function PartnerProgramPage() {
             src={heroImages.partner.background}
             alt=""
             fill
-            className="object-cover object-center opacity-45"
+            className="object-cover object-center opacity-70 brightness-105"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-black/80" />
+          <div className="absolute inset-0 bg-black/55" />
         </div>
-        <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center px-4 py-12 text-center lg:px-6 lg:py-14">
+        <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center px-4 py-10 text-center lg:px-6 lg:py-10">
           <h2 className="font-display text-2xl tracking-[0.06em] text-text uppercase sm:text-3xl">
             Ready To Build Your Brand?
           </h2>

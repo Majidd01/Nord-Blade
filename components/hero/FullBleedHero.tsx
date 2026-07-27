@@ -17,6 +17,7 @@ type FullBleedHeroProps = {
   cards?: readonly BannerCard[];
   fitViewport?: boolean;
   backgroundSrc?: string;
+  /** @deprecated Knife overlay removed — banners include the knife in the photo */
   knifeSrc?: string;
   knifeAlt?: string;
   backgroundStyle?: CSSProperties;
@@ -31,14 +32,8 @@ export function FullBleedHero({
   below,
   cards,
   fitViewport = false,
-  backgroundSrc = "/images/hero-mountains-rocks.png",
-  knifeSrc = "/images/hero-knife.png",
-  knifeAlt = "Damascus steel knife",
-  backgroundStyle = {
-    left: -50,
-    transform: "scale(1.5)",
-    transformOrigin: "center center",
-  },
+  backgroundSrc = "/images/hero-banner-ornate.png",
+  backgroundStyle,
 }: FullBleedHeroProps) {
   const reduceMotionPref = useReducedMotion();
   const [ready, setReady] = useState(false);
@@ -56,9 +51,10 @@ export function FullBleedHero({
       className={`relative overflow-hidden border-b border-white/5 ${
         compact
           ? "md:flex md:min-h-[calc(100dvh-72px)] md:flex-col"
-          : "min-h-0 md:min-h-[88vh]"
+          : "min-h-0 md:min-h-[70vh]"
       }`}
     >
+      {/* Full scene banner (knife already in image) — desktop */}
       <div className="absolute inset-0 hidden overflow-hidden md:block" aria-hidden>
         <div className="absolute inset-0" style={backgroundStyle}>
           <Image
@@ -66,23 +62,23 @@ export function FullBleedHero({
             alt=""
             fill
             priority
-            quality={90}
-            className="object-cover object-[center_55%]"
+            quality={100}
+            className="object-cover object-[center_40%]"
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-bg/85 via-bg/55 to-bg/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg/75 via-transparent to-bg/15" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg/70 via-bg/35 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg/45 via-transparent to-bg/10" />
       </div>
 
       <div className="absolute inset-0 bg-bg md:hidden" aria-hidden />
 
       <div
-        className={`relative z-20 mx-auto grid w-full max-w-7xl flex-1 items-center gap-4 px-4 py-8 md:grid-cols-[1fr_0.95fr] md:gap-6 md:px-6 ${
-          compact ? "md:py-4 lg:py-5" : "md:min-h-[88vh] md:py-16 lg:py-20"
+        className={`relative z-20 mx-auto flex w-full max-w-7xl flex-1 items-center px-4 py-10 md:px-6 ${
+          compact ? "md:py-6 lg:py-7" : "md:min-h-[70vh] md:py-14 lg:py-16"
         }`}
       >
-        <div className={`max-w-xl ${compact ? "md:max-w-lg lg:max-w-xl" : ""}`}>
+        <div className="max-w-xl lg:max-w-2xl">
           {breadcrumbs ? (
             <p className="mb-2 text-xs tracking-wide text-muted">
               {breadcrumbs.map((crumb, i) => (
@@ -110,10 +106,10 @@ export function FullBleedHero({
           </motion.p>
 
           <motion.h1
-            className={`font-display leading-[1.05] text-text text-balance ${
+            className={`font-display leading-[1.05] text-text text-balance [text-shadow:0_2px_20px_rgba(0,0,0,0.65)] ${
               compact
-                ? "text-[2.1rem] sm:text-4xl lg:text-[2.75rem]"
-                : "text-[2.4rem] sm:text-5xl lg:text-[3.4rem]"
+                ? "text-[2.1rem] sm:text-4xl lg:text-[2.85rem]"
+                : "text-[2.4rem] sm:text-5xl lg:text-[3.25rem]"
             }`}
             initial={animate ? { opacity: 0, y: 16 } : false}
             animate={{ opacity: 1, y: 0 }}
@@ -123,7 +119,7 @@ export function FullBleedHero({
           </motion.h1>
 
           <motion.p
-            className={`mt-3 leading-relaxed text-muted ${
+            className={`mt-3 max-w-lg leading-relaxed text-[#e0e0e0] [text-shadow:0_1px_12px_rgba(0,0,0,0.55)] ${
               compact ? "text-sm sm:text-base" : "text-base sm:text-lg"
             }`}
             initial={animate ? { opacity: 0, y: 16 } : false}
@@ -135,7 +131,7 @@ export function FullBleedHero({
 
           {children ? (
             <motion.div
-              className={compact ? "mt-4 md:mt-5" : "mt-8"}
+              className={compact ? "mt-4 md:mt-5" : "mt-7"}
               initial={animate ? { opacity: 0, y: 16 } : false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.24 }}
@@ -143,55 +139,6 @@ export function FullBleedHero({
               {children}
             </motion.div>
           ) : null}
-        </div>
-
-        <div
-          className={`relative mx-auto hidden w-full max-w-lg overflow-visible md:block lg:max-w-none ${
-            compact ? "h-[280px] lg:h-[360px] xl:h-[400px]" : "h-[540px] sm:h-[620px] lg:h-[760px]"
-          }`}
-        >
-          <motion.div
-            className="absolute inset-0 flex items-end justify-center lg:justify-end"
-            style={{ transformOrigin: "50% 90%" }}
-            initial={
-              animate
-                ? { y: "-110%", x: 24, rotate: -22, scale: 1.08, opacity: 0 }
-                : false
-            }
-            animate={
-              animate
-                ? {
-                    y: ["-110%", "6%", "-1%", "0%"],
-                    x: [24, -4, 1, 0],
-                    rotate: [-22, -5, -9, -7],
-                    scale: [1.08, 1.02, 1.01, 1],
-                    opacity: [0, 1, 1, 1],
-                  }
-                : { y: "0%", rotate: -7, opacity: 1, scale: 1 }
-            }
-            transition={
-              animate
-                ? {
-                    duration: 1.2,
-                    delay: 0.1,
-                    times: [0, 0.62, 0.8, 1],
-                    ease: [0.16, 0.84, 0.28, 1],
-                  }
-                : { duration: 0 }
-            }
-          >
-            <div className="relative h-[115%] w-[100%] lg:mr-[-2%] lg:w-[95%]">
-              <Image
-                src={knifeSrc}
-                alt={knifeAlt}
-                fill
-                priority
-                quality={100}
-                className="object-contain object-bottom"
-                sizes="(max-width: 1024px) 95vw, 720px"
-              />
-            </div>
-          </motion.div>
         </div>
       </div>
 

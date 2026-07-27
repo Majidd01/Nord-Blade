@@ -65,8 +65,8 @@ export default function GrowBrandPage() {
         />
       </FullBleedHero>
 
-      <section className="mx-auto max-w-7xl px-4 py-20 lg:px-6">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
+      <section className="mx-auto max-w-7xl px-4 py-10 lg:px-6">
+        <div className="grid items-center gap-6 lg:grid-cols-2">
           <div>
             <SectionHeading
               align="left"
@@ -98,9 +98,9 @@ export default function GrowBrandPage() {
       </section>
 
       <section className="border-y border-white/5 bg-surface/50">
-        <div className="mx-auto max-w-7xl px-4 py-20 lg:px-6">
+        <div className="mx-auto max-w-7xl px-4 py-10 lg:px-6">
           <SectionHeading eyebrow="How Growth Works" title="A Clear Path Out of Stagnation" />
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {growthSteps.map((step, index) => (
               <div
                 key={step.title}

@@ -40,7 +40,7 @@ export default function ContactPage() {
 
       {/* Trust strip */}
       <section className="border-b border-gold/15 bg-surface/40">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 sm:flex-row sm:items-center sm:justify-center sm:gap-10 lg:px-6">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 sm:flex-row sm:items-center sm:justify-center sm:gap-6 lg:px-6">
           <p className="flex items-center gap-2 text-xs font-medium tracking-[0.16em] text-text/85 uppercase">
             <span aria-hidden>📍</span>
             {siteConfig.registration}
@@ -53,14 +53,14 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-20 lg:px-6">
+      <section className="mx-auto max-w-7xl px-4 py-10 lg:px-6">
         <SectionHeading
           eyebrow="Contact Details"
           title="How To Reach Us"
           description="UK business line for general enquiries. WhatsApp for projects and manufacturing."
         />
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <article className="rounded-lg border border-gold/25 bg-surface p-7">
             <p className="font-display text-sm tracking-[0.2em] text-gold uppercase">
               📞 UK Business Line
@@ -138,9 +138,9 @@ export default function ContactPage() {
       </section>
 
       <section className="border-y border-white/5 bg-surface/50">
-        <div className="mx-auto max-w-7xl px-4 py-16 lg:px-6">
+        <div className="mx-auto max-w-7xl px-4 py-10 lg:px-6">
           <SectionHeading eyebrow="Why Contact Nordblade?" title="Clear Answers. Real Momentum." />
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {contactReasons.map((item) => (
               <div key={item.title}>
                 <h3 className="font-display text-sm tracking-[0.16em] text-gold uppercase">

@@ -58,8 +58,8 @@ export default function AboutPage() {
         />
       </FullBleedHero>
 
-      <section className="mx-auto max-w-7xl px-4 py-20 lg:px-6">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
+      <section className="mx-auto max-w-7xl px-4 py-10 lg:px-6">
+        <div className="grid items-center gap-6 lg:grid-cols-2">
           <div className="relative aspect-[16/11] overflow-hidden rounded-lg border border-gold/20">
             <Image
               src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1400&q=80"
@@ -81,26 +81,26 @@ export default function AboutPage() {
       </section>
 
       <section className="border-y border-white/5 bg-surface/50">
-        <div className="mx-auto max-w-7xl px-4 py-20 lg:px-6">
+        <div className="mx-auto max-w-7xl px-4 py-10 lg:px-6">
           <SectionHeading eyebrow="Who We Are" title="What Drives Every Project" />
-          <div className="mt-12">
+          <div className="mt-6">
             <IconGrid items={[...aboutPillars, ...storyPillars]} columns="sm:grid-cols-2 lg:grid-cols-3" />
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-20 lg:px-6">
+      <section className="mx-auto max-w-7xl px-4 py-10 lg:px-6">
         <SectionHeading
           eyebrow="Why Brands Trust Nordblade"
           title="We Don't Just Make Knives. We Build Businesses."
         />
-        <div className="mt-12">
+        <div className="mt-6">
           <IconGrid items={trustReasons} />
         </div>
       </section>
 
       <section className="border-y border-gold/15 bg-surface/70">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 lg:grid-cols-[1fr_1.2fr_0.9fr] lg:px-6">
+        <div className="mx-auto grid max-w-7xl items-center gap-6 px-4 py-8 lg:grid-cols-[1fr_1.2fr_0.9fr] lg:px-6">
           <div className="relative hidden aspect-[4/5] overflow-hidden rounded-lg border border-gold/20 lg:block">
             <Image
               src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=900&q=80"

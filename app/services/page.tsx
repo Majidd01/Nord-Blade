@@ -29,13 +29,13 @@ export default function ServicesPage() {
         cards={pageBannerCards.services}
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-20 lg:px-6">
+      <section className="mx-auto max-w-7xl px-4 py-10 lg:px-6">
         <SectionHeading
           eyebrow="Three Paths. One Partner."
           title="Choose the Path That Fits Your Stage"
           description="Each path ends in the same place: a stronger brand, sharper product, and a team that sticks with you."
         />
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-6 grid gap-6 lg:grid-cols-3">
           {services.map((service, index) => (
             <ServiceCard key={service.slug} service={service} index={index} />
           ))}
