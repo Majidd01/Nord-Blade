@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ServiceCard } from "@/components/ServiceCard";
 import { ValueBar } from "@/components/ValueBar";
 import { heroImages } from "@/lib/heroes";
-import { services } from "@/lib/site";
+import { services, pageBannerCards } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Our Services",
@@ -26,6 +26,7 @@ export default function ServicesPage() {
         ]}
         backgroundSrc={heroImages.services.background}
         knifeSrc={heroImages.services.knife}
+        cards={pageBannerCards.services}
       />
 
       <section className="mx-auto max-w-7xl px-4 py-20 lg:px-6">

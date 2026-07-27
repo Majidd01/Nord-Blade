@@ -9,7 +9,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ValueBar } from "@/components/ValueBar";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { heroImages } from "@/lib/heroes";
-import { homeBenefits, partnerProgram, services, stats } from "@/lib/site";
+import { homeBenefits, pageBannerCards, partnerProgram, services, stats } from "@/lib/site";
 
 const benefitIcons = [
   "M12 2l2.2 6.6H21l-5.4 3.9 2.1 6.5L12 15.8 6.3 19l2.1-6.5L3 8.6h6.8L12 2z",
@@ -47,6 +47,7 @@ export default function HomePage() {
   return (
     <>
       <FullBleedHero
+        fitViewport
         eyebrow="Premium Knife Manufacturing & Brand Growth Partner"
         title={
           <>
@@ -58,38 +59,39 @@ export default function HomePage() {
         description="From first sketch to scaling sales — NORDBLADE is your manufacturing and brand growth partner. Launch a new brand, fulfill bulk OEM orders, or revive a line that isn't selling."
         backgroundSrc={heroImages.home.background}
         knifeSrc={heroImages.home.knife}
+        cards={pageBannerCards.home}
       >
-        <div className="space-y-8">
-          <div className="grid gap-4 sm:grid-cols-3">
+        <div className="space-y-5 md:space-y-6">
+          <div className="grid gap-3 sm:grid-cols-3">
             {homeBenefits.map((benefit, i) => (
-              <div key={benefit.title} className="flex gap-3">
+              <div key={benefit.title} className="flex gap-2.5">
                 <span className="mt-0.5 text-gold" aria-hidden>
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
                     <path d={benefitIcons[i]} />
                   </svg>
                 </span>
                 <div>
-                  <p className="text-[0.65rem] font-medium tracking-[0.16em] text-gold uppercase">
+                  <p className="text-[0.6rem] font-medium tracking-[0.14em] text-gold uppercase">
                     {benefit.title}
                   </p>
-                  <p className="mt-1 text-sm text-muted">{benefit.description}</p>
+                  <p className="mt-0.5 text-xs text-muted">{benefit.description}</p>
                 </div>
               </div>
             ))}
           </div>
-          <div className="flex flex-col gap-3 sm:flex-row">
+          <div className="flex flex-col gap-2.5 sm:flex-row">
             <WhatsAppButton
               variant="solid"
-              size="lg"
-              label="Start Your Project"
+              size="md"
+              label="Start Your Project →"
               message="Hi NORDBLADE, I want to start a knife brand project."
             />
-            <Link
-              href="/services"
-              className="inline-flex items-center justify-center rounded-full border border-gold/50 px-7 py-4 text-sm text-text transition-colors hover:border-gold hover:bg-gold/10"
-            >
-              Explore Services
-            </Link>
+            <WhatsAppButton
+              variant="outline"
+              size="md"
+              label="Chat on WhatsApp"
+              message="Hi NORDBLADE, I'd like to chat about my project."
+            />
           </div>
         </div>
       </FullBleedHero>

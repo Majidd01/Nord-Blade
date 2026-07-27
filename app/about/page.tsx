@@ -6,7 +6,7 @@ import { FullBleedHero } from "@/components/hero/FullBleedHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { heroImages } from "@/lib/heroes";
-import { aboutPillars, stats, trustReasons } from "@/lib/site";
+import { aboutPillars, pageBannerCards, stats, trustReasons } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -50,6 +50,7 @@ export default function AboutPage() {
         ]}
         backgroundSrc={heroImages.about.background}
         knifeSrc={heroImages.about.knife}
+        cards={pageBannerCards.about}
       >
         <WhatsAppButton
           size="lg"

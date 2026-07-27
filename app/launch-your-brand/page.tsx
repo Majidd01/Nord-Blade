@@ -5,7 +5,7 @@ import { ProcessSteps } from "@/components/ProcessSteps";
 import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { heroImages } from "@/lib/heroes";
-import { services, siteConfig } from "@/lib/site";
+import { services, pageBannerCards, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Launch Your Brand",
@@ -33,6 +33,7 @@ export default function LaunchBrandPage() {
         ]}
         backgroundSrc={heroImages.launch.background}
         knifeSrc={heroImages.launch.knife}
+        cards={pageBannerCards.launch}
       >
         <div className="space-y-3">
           <p className="font-display text-sm tracking-[0.16em] text-text uppercase">

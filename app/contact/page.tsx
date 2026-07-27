@@ -5,7 +5,7 @@ import { FullBleedHero } from "@/components/hero/FullBleedHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { heroImages } from "@/lib/heroes";
-import { contactReasons, siteConfig, whatsappUrl } from "@/lib/site";
+import { contactReasons, pageBannerCards, siteConfig, whatsappUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -26,6 +26,7 @@ export default function ContactPage() {
         ]}
         backgroundSrc={heroImages.contact.background}
         knifeSrc={heroImages.contact.knife}
+        cards={pageBannerCards.contact}
       >
         <div className="space-y-3">
           <WhatsAppButton

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import { useEffect, useState } from "react";
+import { HeroBannerCards, type BannerCard } from "@/components/HeroBannerCards";
 
 type FullBleedHeroProps = {
   eyebrow: string;
@@ -12,9 +13,10 @@ type FullBleedHeroProps = {
   description: string;
   breadcrumbs?: { label: string; href?: string }[];
   children?: ReactNode;
-  /** Full-bleed scenic background (no UI text baked in) */
+  below?: ReactNode;
+  cards?: readonly BannerCard[];
+  fitViewport?: boolean;
   backgroundSrc?: string;
-  /** Knife cutout that drops in from the top */
   knifeSrc?: string;
   knifeAlt?: string;
   backgroundStyle?: CSSProperties;
@@ -26,6 +28,9 @@ export function FullBleedHero({
   description,
   breadcrumbs,
   children,
+  below,
+  cards,
+  fitViewport = false,
   backgroundSrc = "/images/hero-mountains-rocks.png",
   knifeSrc = "/images/hero-knife.png",
   knifeAlt = "Damascus steel knife",
@@ -37,6 +42,8 @@ export function FullBleedHero({
 }: FullBleedHeroProps) {
   const reduceMotionPref = useReducedMotion();
   const [ready, setReady] = useState(false);
+  const hasBottom = Boolean(below || cards?.length);
+  const compact = fitViewport || hasBottom;
 
   useEffect(() => {
     setReady(true);
@@ -45,8 +52,13 @@ export function FullBleedHero({
   const animate = ready && !reduceMotionPref;
 
   return (
-    <section className="relative min-h-0 overflow-hidden border-b border-white/5 md:min-h-[88vh]">
-      {/* Background image — desktop only */}
+    <section
+      className={`relative overflow-hidden border-b border-white/5 ${
+        compact
+          ? "md:flex md:min-h-[calc(100dvh-72px)] md:flex-col"
+          : "min-h-0 md:min-h-[88vh]"
+      }`}
+    >
       <div className="absolute inset-0 hidden overflow-hidden md:block" aria-hidden>
         <div className="absolute inset-0" style={backgroundStyle}>
           <Image
@@ -54,22 +66,25 @@ export function FullBleedHero({
             alt=""
             fill
             priority
+            quality={90}
             className="object-cover object-[center_55%]"
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-bg/80 via-bg/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg/45 via-transparent to-bg/10" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_50%,rgba(197,157,95,0.06),transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg/85 via-bg/55 to-bg/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg/75 via-transparent to-bg/15" />
       </div>
 
-      {/* Mobile solid background */}
       <div className="absolute inset-0 bg-bg md:hidden" aria-hidden />
 
-      <div className="relative z-20 mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 md:min-h-[88vh] md:grid-cols-[1fr_1.05fr] md:px-6 md:py-20">
-        <div className="max-w-xl">
+      <div
+        className={`relative z-20 mx-auto grid w-full max-w-7xl flex-1 items-center gap-4 px-4 py-8 md:grid-cols-[1fr_0.95fr] md:gap-6 md:px-6 ${
+          compact ? "md:py-4 lg:py-5" : "md:min-h-[88vh] md:py-16 lg:py-20"
+        }`}
+      >
+        <div className={`max-w-xl ${compact ? "md:max-w-lg lg:max-w-xl" : ""}`}>
           {breadcrumbs ? (
-            <p className="mb-4 text-xs tracking-wide text-muted">
+            <p className="mb-2 text-xs tracking-wide text-muted">
               {breadcrumbs.map((crumb, i) => (
                 <span key={crumb.label}>
                   {i > 0 ? <span className="mx-2 text-gold/50">›</span> : null}
@@ -86,7 +101,7 @@ export function FullBleedHero({
           ) : null}
 
           <motion.p
-            className="mb-3 text-[0.7rem] font-medium tracking-[0.22em] text-gold uppercase"
+            className="mb-2 text-[0.65rem] font-medium tracking-[0.2em] text-gold uppercase"
             initial={animate ? { opacity: 0, y: 12 } : false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -95,7 +110,11 @@ export function FullBleedHero({
           </motion.p>
 
           <motion.h1
-            className="font-display text-[2.4rem] leading-[1.05] text-text sm:text-5xl lg:text-[3.4rem] text-balance"
+            className={`font-display leading-[1.05] text-text text-balance ${
+              compact
+                ? "text-[2.1rem] sm:text-4xl lg:text-[2.75rem]"
+                : "text-[2.4rem] sm:text-5xl lg:text-[3.4rem]"
+            }`}
             initial={animate ? { opacity: 0, y: 16 } : false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.08 }}
@@ -104,7 +123,9 @@ export function FullBleedHero({
           </motion.h1>
 
           <motion.p
-            className="mt-5 text-base leading-relaxed text-muted sm:text-lg"
+            className={`mt-3 leading-relaxed text-muted ${
+              compact ? "text-sm sm:text-base" : "text-base sm:text-lg"
+            }`}
             initial={animate ? { opacity: 0, y: 16 } : false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.16 }}
@@ -114,7 +135,7 @@ export function FullBleedHero({
 
           {children ? (
             <motion.div
-              className="mt-8"
+              className={compact ? "mt-4 md:mt-5" : "mt-8"}
               initial={animate ? { opacity: 0, y: 16 } : false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.24 }}
@@ -124,123 +145,63 @@ export function FullBleedHero({
           ) : null}
         </div>
 
-        {/* Knife image — desktop only */}
-        <div className="relative mx-auto hidden h-[540px] w-full max-w-lg overflow-visible sm:h-[620px] md:block lg:max-w-none lg:h-[760px]">
-          <div className="pointer-events-none absolute bottom-[6%] left-[52%] h-24 w-[75%] -translate-x-1/2 rounded-[100%] bg-bg/50 blur-3xl" />
-
+        <div
+          className={`relative mx-auto hidden w-full max-w-lg overflow-visible md:block lg:max-w-none ${
+            compact ? "h-[280px] lg:h-[360px] xl:h-[400px]" : "h-[540px] sm:h-[620px] lg:h-[760px]"
+          }`}
+        >
           <motion.div
             className="absolute inset-0 flex items-end justify-center lg:justify-end"
             style={{ transformOrigin: "50% 90%" }}
             initial={
               animate
-                ? {
-                    y: "-130%",
-                    x: 40,
-                    rotate: -28,
-                    scale: 1.15,
-                    opacity: 0,
-                    filter: "brightness(1.4) blur(4px)",
-                  }
+                ? { y: "-110%", x: 24, rotate: -22, scale: 1.08, opacity: 0 }
                 : false
             }
             animate={
               animate
                 ? {
-                    y: ["-130%", "8%", "-2%", "0%"],
-                    x: [40, -6, 2, 0],
-                    rotate: [-28, -4, -10, -7],
-                    scale: [1.15, 1.05, 1.02, 1],
+                    y: ["-110%", "6%", "-1%", "0%"],
+                    x: [24, -4, 1, 0],
+                    rotate: [-22, -5, -9, -7],
+                    scale: [1.08, 1.02, 1.01, 1],
                     opacity: [0, 1, 1, 1],
-                    filter: [
-                      "brightness(1.4) blur(4px)",
-                      "brightness(1.2) blur(0px)",
-                      "brightness(1.05) blur(0px)",
-                      "brightness(1) blur(0px)",
-                    ],
                   }
-                : {
-                    y: "0%",
-                    rotate: -7,
-                    opacity: 1,
-                    scale: 1,
-                  }
+                : { y: "0%", rotate: -7, opacity: 1, scale: 1 }
             }
             transition={
               animate
                 ? {
-                    duration: 1.45,
-                    delay: 0.15,
-                    times: [0, 0.62, 0.78, 1],
+                    duration: 1.2,
+                    delay: 0.1,
+                    times: [0, 0.62, 0.8, 1],
                     ease: [0.16, 0.84, 0.28, 1],
                   }
                 : { duration: 0 }
             }
           >
-            <motion.div
-              className="relative h-[120%] w-[100%] lg:mr-[-2%] lg:w-[95%]"
-              animate={
-                animate
-                  ? {
-                      y: [0, -12, 0],
-                    }
-                  : undefined
-              }
-              transition={
-                animate
-                  ? {
-                      delay: 1.75,
-                      duration: 5,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }
-                  : undefined
-              }
-            >
+            <div className="relative h-[115%] w-[100%] lg:mr-[-2%] lg:w-[95%]">
               <Image
                 src={knifeSrc}
                 alt={knifeAlt}
                 fill
                 priority
-                className="object-contain object-bottom drop-shadow-[0_45px_70px_rgba(0,0,0,0.95)]"
+                quality={100}
+                className="object-contain object-bottom"
                 sizes="(max-width: 1024px) 95vw, 720px"
               />
-
-              {animate ? (
-                <motion.div
-                  className="pointer-events-none absolute inset-0 overflow-hidden"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: [0, 1, 0] }}
-                  transition={{ duration: 0.7, delay: 1.05 }}
-                >
-                  <motion.div
-                    className="absolute -inset-y-8 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/35 to-transparent"
-                    initial={{ left: "-40%" }}
-                    animate={{ left: "120%" }}
-                    transition={{ duration: 0.65, delay: 1.05, ease: "easeInOut" }}
-                  />
-                </motion.div>
-              ) : null}
-            </motion.div>
+            </div>
           </motion.div>
-
-          {animate ? (
-            <>
-              <motion.div
-                className="pointer-events-none absolute bottom-[12%] left-[55%] h-40 w-40 -translate-x-1/2 rounded-full bg-gold/30 blur-3xl"
-                initial={{ opacity: 0, scale: 0.2 }}
-                animate={{ opacity: [0, 1, 0], scale: [0.2, 1.6, 2.4] }}
-                transition={{ duration: 0.85, delay: 0.95, ease: "easeOut" }}
-              />
-              <motion.div
-                className="pointer-events-none absolute bottom-[10%] left-[55%] h-3 w-[55%] -translate-x-1/2 rounded-full border border-gold/40"
-                initial={{ opacity: 0, scaleX: 0.3 }}
-                animate={{ opacity: [0, 0.7, 0], scaleX: [0.3, 1.2, 1.5] }}
-                transition={{ duration: 0.7, delay: 0.98, ease: "easeOut" }}
-              />
-            </>
-          ) : null}
         </div>
       </div>
+
+      {hasBottom ? (
+        <div className="relative z-20 mt-auto w-full shrink-0 px-4 pb-4 pt-0 md:px-6 md:pb-5">
+          <div className="mx-auto max-w-7xl">
+            {below ?? (cards ? <HeroBannerCards cards={cards} /> : null)}
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }

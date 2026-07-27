@@ -5,7 +5,7 @@ import { FullBleedHero } from "@/components/hero/FullBleedHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { heroImages } from "@/lib/heroes";
-import { services } from "@/lib/site";
+import { services, pageBannerCards } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Grow Your Brand",
@@ -55,6 +55,7 @@ export default function GrowBrandPage() {
         ]}
         backgroundSrc={heroImages.grow.background}
         knifeSrc={heroImages.grow.knife}
+        cards={pageBannerCards.grow}
       >
         <WhatsAppButton
           size="lg"

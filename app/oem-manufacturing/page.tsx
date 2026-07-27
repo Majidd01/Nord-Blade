@@ -5,7 +5,7 @@ import { FullBleedHero } from "@/components/hero/FullBleedHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { heroImages } from "@/lib/heroes";
-import { services } from "@/lib/site";
+import { services, pageBannerCards } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "OEM Manufacturing",
@@ -60,6 +60,7 @@ export default function OemPage() {
         ]}
         backgroundSrc={heroImages.oem.background}
         knifeSrc={heroImages.oem.knife}
+        cards={pageBannerCards.oem}
       >
         <WhatsAppButton
           size="lg"
