@@ -30,7 +30,7 @@ export function ProductCard({
       transition={{ duration: 0.4, delay: index * 0.06 }}
       whileHover={reduceMotion ? undefined : { y: -4 }}
     >
-      <Link href={href} className="relative block aspect-[4/3] overflow-hidden bg-[#1a1a1a]">
+      <Link href={href} className="relative block aspect-[4/3] overflow-hidden bg-[#121212]">
         <Image
           src={product.image}
           alt={product.name}

@@ -60,15 +60,35 @@ export function ProductDetailView({ ctx }: ProductDetailViewProps) {
 
       <section className="mx-auto max-w-7xl px-4 py-12 lg:px-6">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
-          <div className="relative aspect-square overflow-hidden rounded-2xl border border-gold/20 bg-[#1a1a1a]">
-            <Image
-              src={product.image}
-              alt={product.name}
-              fill
-              className="object-contain p-6"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              priority
-            />
+          <div className="space-y-4">
+            <div className="relative aspect-square overflow-hidden rounded-2xl border border-gold/20 bg-[#121212]">
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                className="object-contain p-6"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+            </div>
+            {product.images && product.images.length > 1 ? (
+              <div className="grid grid-cols-2 gap-4">
+                {product.images.slice(1).map((src) => (
+                  <div
+                    key={src}
+                    className="relative aspect-square overflow-hidden rounded-xl border border-gold/15 bg-[#121212]"
+                  >
+                    <Image
+                      src={src}
+                      alt={`${product.name} alternate view`}
+                      fill
+                      className="object-contain p-4"
+                      sizes="(max-width: 1024px) 50vw, 25vw"
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : null}
           </div>
 
           <div className="flex flex-col">
@@ -126,7 +146,7 @@ export function ProductDetailView({ ctx }: ProductDetailViewProps) {
                   href={getProductHref(item.slug, category.slug, parent?.slug)}
                   className="group flex items-center gap-4 rounded-xl border border-gold/20 bg-surface/60 p-4 transition-colors hover:border-gold/40"
                 >
-                  <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-[#1a1a1a]">
+                  <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-[#121212]">
                     <Image
                       src={item.image}
                       alt={item.name}

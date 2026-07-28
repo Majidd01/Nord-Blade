@@ -5,7 +5,7 @@ import { CTABanner } from "@/components/CTABanner";
 import { CategoryCard } from "@/components/CategoryCard";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
-import { findCategory } from "@/lib/products";
+import { findCategory, productCategories } from "@/lib/products";
 
 type PageProps = {
   params: Promise<{ category: string }>;
@@ -22,18 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export function generateStaticParams() {
-  return [
-    { category: "axe" },
-    { category: "daggers" },
-    { category: "folding-knives" },
-    { category: "hunting-knives" },
-    { category: "kitchen-knives" },
-    { category: "large-hunting-knives" },
-    { category: "razors" },
-    { category: "italian-knives" },
-    { category: "medieval" },
-    { category: "viking" },
-  ];
+  return productCategories.map((category) => ({ category: category.slug }));
 }
 
 export default async function CategoryPage({ params }: PageProps) {
