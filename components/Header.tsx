@@ -26,7 +26,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/5 bg-bg">
       <div className="mx-auto flex h-[72px] w-full max-w-[1600px] items-center gap-4 px-4 lg:gap-5 lg:px-6 xl:px-8">
-        <Logo className="shrink-0" />
+        <Logo className="shrink-0" showTagline={false} />
 
         <nav
           className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 lg:flex xl:gap-1"
