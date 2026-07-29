@@ -26,6 +26,16 @@ export function whatsappUrl(message?: string) {
   return `${base}?text=${encodeURIComponent(message)}`;
 }
 
+export const headerNavLinks = [
+  { href: "/", label: "Home" },
+  { href: "/oem-manufacturing", label: "OEM Manufacturing" },
+  { href: "/launch-your-brand", label: "Launch Your Brand" },
+  { href: "/grow-your-brand", label: "Grow Your Brand" },
+  { href: "/partner-program", label: "Partner Program" },
+  { href: "/products", label: "Products" },
+  { href: "/services", label: "Services" },
+] as const;
+
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/products", label: "Products" },

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
 import { ProductsDropdown } from "@/components/ProductsDropdown";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { navLinks } from "@/lib/site";
+import { headerNavLinks } from "@/lib/site";
 
 export function Header() {
   const pathname = usePathname();
@@ -32,7 +32,7 @@ export function Header() {
           className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 lg:flex xl:gap-1"
           aria-label="Primary"
         >
-          {navLinks.map((link) => {
+          {headerNavLinks.map((link) => {
             if (link.href === "/products") {
               return <ProductsDropdown key={link.href} />;
             }
@@ -89,7 +89,7 @@ export function Header() {
       {open ? (
         <div className="border-t border-white/5 bg-bg lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col px-5 py-4" aria-label="Mobile">
-            {navLinks.map((link) => {
+            {headerNavLinks.map((link) => {
               if (link.href === "/products") {
                 return (
                   <ProductsDropdown
