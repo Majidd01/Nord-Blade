@@ -5,7 +5,7 @@ const foldingKnifeCatalog = [
     material: "Damascus Steel",
     sourceUrl: "https://www.etsy.com/uk/listing/4538542484/handcrafted-damascus-camping-tool",
     image: "/images/products/folding-knives/folder-01.jpg",
-    images: ["/images/products/folding-knives/folder-01.jpg", "/images/products/folding-knives/folder-01-alt.jpg"],
+    images: ["/images/products/folding-knives/folder-01.jpg"],
     description:
       "Handcrafted Damascus camping folder with natural wood handle, polished bolsters, and genuine leather pouch — available with custom engraving.",
   },
@@ -15,7 +15,7 @@ const foldingKnifeCatalog = [
     material: "Damascus Steel",
     sourceUrl: "https://www.etsy.com/uk/listing/4340842889/damascus-steel-viking-knifw-custom-hand",
     image: "/images/products/folding-knives/folder-02.jpg",
-    images: ["/images/products/folding-knives/folder-02.jpg", "/images/products/folding-knives/folder-02-alt.jpg"],
+    images: ["/images/products/folding-knives/folder-02.jpg"],
     description:
       "Custom hand-forged Viking-style folding knife in Damascus steel with wood handle and leather sheath — built for EDC and outdoor carry.",
   },
@@ -75,7 +75,7 @@ const foldingKnifeCatalog = [
     material: "Damascus Steel",
     sourceUrl: "https://www.etsy.com/ca/listing/1871630083/folding-knife-handmade-damascus-pocket",
     image: "/images/products/folding-knives/folder-08.jpg",
-    images: ["/images/products/folding-knives/folder-08.jpg", "/images/products/folding-knives/folder-08-alt.jpg"],
+    images: ["/images/products/folding-knives/folder-08.jpg"],
     description:
       "Handmade Damascus pocket knife with bone or wood handle — classic back-lock folder for camping, hunting, and gifting.",
   },

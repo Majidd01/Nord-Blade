@@ -6,8 +6,8 @@ export const siteConfig = {
   whatsappNumber:
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "") || "923240000002",
   whatsappDisplay: "+92 324 0000002",
-  email: "hello@nordblade.com",
-  emailShipping: "shipping@nordblade.com",
+  email: "support@nordblade.co.uk",
+  emailShipping: "support@nordblade.co.uk",
   phoneUK: "+44 7405 012119",
   phone: "+44 7405 012119",
   phoneAlt: "+92 324 0000002",
@@ -539,8 +539,8 @@ export const pageBannerCards = {
     },
     {
       title: "Email",
-      description: "hello@nordblade.com for project briefs.",
-      href: "mailto:hello@nordblade.com",
+      description: "support@nordblade.co.uk for project briefs.",
+      href: "mailto:support@nordblade.co.uk",
       cta: "Email",
       icon: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22 6l-10 7L2 6",
     },
